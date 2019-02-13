@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css?family=Hi+Melody');
+
+/*
+Color plate by https://www.colourlovers.com/palette/1250695/savanah
+6A9057 - light green
+0B4733 - dark green
+FDAD32 - orange
+FAF67B - light yellow
+E2DD4B - dark yellow
+*/
+body {
+  background-color: #FDAD32;
+}
+
+[aria-hidden="true"] {
+  display: none;
+}
+
+.scene {
+  background-color: #FAF67B;
+  border-radius: 1em;
+  color: #0B4733;
+  font-family: 'Hi Melody', cursive;
+  font-size: 1.5em;
+  margin: 1em;
+  padding: 0.5em 1em;  
+}
+
+.scene p {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+}
+
+.scene i {
+  background-color: #E2DD4B;
+  border:1px solid #FDAD32;
+  border-radius: 0.2em;
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.7em;
+}
+
+.challenge {
+  background-color: #FAF67B;
+  border-radius: 1em;
+  margin: 1em;
+  padding: 0.5em;  
+  position: relative;
+}
+
+h3 {
+  color: #E2DD4B;
+  font-size: 0.8em;
+  margin: 0 0 0.5em 0;
+  padding: 0;
+  letter-spacing: 0.5em;
+  font-weight: normal;
+}
+
+.regular-expression {
+  background-color: #0B4733;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  box-sizing: border-box;
+  color: #6A9057;
+  display: block;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  padding: 0.5em 1em;
+  width: 100%;
+}
+
+.pattern {
+  background: transparent;
+  border: 1px dashed #6A9057;
+  color: #E2DD4B;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1em;
+  max-width: 100%;
+  outline-color: #FDAD32;
+  transition: width 0.5s ease-out;
+  width: 20em;
+}
+
+.pattern::placeholder {
+  color: #6A9057;
+}
+
+.js-flag {
+  display: none;
+}
+
+.js-flag + label {
+  cursor: pointer;
+}
+
+.js-flag:checked + label {
+  color: #FAF67B;
+}
+
+.data {
+  background-color: #0B4733;
+  box-sizing: border-box;
+  color: #6A9057;
+  display: block;
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 1em;
+  margin-bottom: 0.5em;
+  padding: 0.5em 1em;
+  width: 100%;
+}
+
+.data b {
+  color: #E2DD4B;
+}
+
+.matches {
+  background-color: #0B4733;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  box-sizing: border-box;
+  color: #6A9057;
+  display: block;
+  font-family: 'Courier New', Courier, monospace;
+  height: 4em;
+  letter-spacing: 0.5em;
+  padding: 0.5em 1em;
+  width: 100%;
+}
+
+.dialog {
+  background-color: #FAF67B;
+  border-radius: 1em;
+  color: #0B4733;
+  font-family: 'Hi Melody', cursive;
+  font-size: 1.5em;
+  margin: 1em;
+  padding: 0.5em 1em;  
+}
+
+.button-next {
+  background-color: #0B4733;
+  border: 4px solid #FDAD32;
+  border-radius: 0.5em;
+  color: #FDAD32;
+  cursor: pointer;
+  display: block;
+  font-size: 0.76em;
+  font-weight: bold;
+  margin: 0 auto;
+  width: 10em;
+}
+
+.button-next:hover {
+  color: #E2DD4B;
+}
+
+.button-next:focus {
+  background-color: #6A9057;
+  outline: none;
+}
+
+.button-next:active {
+  background-color: #6A9057;
+  border-color: #0B4733;
+  color: #E2DD4B;
+}
