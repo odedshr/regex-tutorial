@@ -56,8 +56,9 @@ class Game {
     this.dPattern = document.getElementById('pattern');
     this.dMatches = document.getElementById('matches');
     this.dSuccess = document.getElementById('success');
-    this.initFlags();
 
+    this.pattern = '';
+    this.options = '';
     this.dPattern.onkeyup = () => this.onPatternUpdated();
 
     document.getElementById('next').onclick = () => this.nextLevel();
@@ -65,21 +66,15 @@ class Game {
     this.refreshDisplay();
   }
 
-  initFlags() {
-    this.flags = { g: false, m: false, i: false };
-
-    document
-      .querySelectorAll('.js-flag')
-      .forEach(dFlag => 
-        dFlag.onclick = evt => {
-          this.flags[evt.target.value] = evt.target.checked;
-          this.refreshAndValidate();
-        }
-      );
-  }
-
   onPatternUpdated() {
+    const string = this.dPattern.value;
+    if ((string.match(/\//g) || []).length < 2) {
+      [this.pattern, this.options] = [];
+    } else {
+      [, this.pattern, this.options] = this.dPattern.value.split('/');
+    }
     this.refreshAndValidate();
+
     if (this.dPattern.value.length) {
       this.dPattern.style.width = `${this.dPattern.value.length}em`;
     } else {
@@ -89,24 +84,28 @@ class Game {
 
   refreshAndValidate () {
     this.refreshDisplay();
-    if (this.isMatch(this.currentLevel.text, this.getRegExp(this.dPattern.value), this.currentLevel.expects)) {
+    if (this.isMatch(this.currentLevel.text, this.getRegExp(this.pattern, this.options), this.currentLevel.expects)) {
       this.dSuccess.setAttribute('aria-hidden', false);
     }
   }
 
-  getRegExp(pattern) {
-    const flagStr = `${this.flags.g ? 'g' : ''}${this.flags.m ? 'm' : ''}${this.flags.i ? 'i' : ''}`;
+  getRegExp(pattern, options) {
     try {
-      return new RegExp(pattern, flagStr);
+      return new RegExp(pattern, options);
     }
     catch (err) {
+      if (err.message.indexOf('Invalid flags') > -1) {
+        this.dMatches.innerHTML = `Invalid flags provided: "${options}"`;
+      } else {
+        this.dMatches.innerHTML = err;
+      }
       return '';
     }
   }
 
   refreshDisplay() {
-    this.displayData(this.getHighlightedText(this.currentLevel.text, this.getRegExp(`(${this.dPattern.value})`)))
-    this.displayMatches(this.currentLevel.text, this.dPattern.value.length ? this.getRegExp(this.dPattern.value) : false);
+    this.displayData(this.getHighlightedText(this.currentLevel.text, this.getRegExp(`(${this.pattern})`, this.options)))
+    this.displayMatches(this.currentLevel.text, this.pattern ? this.getRegExp(this.pattern, this.options) : false);
   }
 
   displayData(data) {
@@ -138,6 +137,7 @@ class Game {
     this.flags = { g: false, m: false, i: false };
     document.querySelectorAll('.js-flag').forEach(dFlag => {dFlag.checked = false; });
     this.onPatternUpdated();
+    this.dPattern.focus();
   }
 }
 

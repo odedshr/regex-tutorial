@@ -1,5 +1,7 @@
+<!DOCTYPE html>
 <html>
   <head>
+    <title>RegExp Tutorial</title>
     <script src="main.js"></script>
     <link rel="stylesheet" type="text/css" href="style-01.css">
   </head>
@@ -7,20 +9,20 @@
     <div id="scene-0" class="scene">
       <p>G'day mate!</p>
       <p>The name is Reggie, Expert in tracking wild animals. At your service.</p>
-      <p>In this tutorial you're gonna be learning the <i>RegExp</i> technique (also known as <b>Regular-Expressions</b>) to track down elusive animals.</p>
+      <p>In this tutorial you're gonna be learning how to track down elusive animals using <i>RegExp</i> patterns (also known as <b>Regular-Expressions</b>).</p>
       <p>And here your first challenge - somewhere in this text there's a cat hiding and you ought to find it</p>
-      <p>For an expert tracker this should take a second, and in real-life this is all you got before the beast will run away or pounce at you.
-        All you need to do is type `<i>cat</i>` in the regexp pattern and this will highlight where the beast is hiding. Give it a go!
+      <p>For an expert tracker this should take a second, and in real-life this is all you got before the beast will pounce at your throat
+        All you need to do is type `<i>cat</i>` between two slashes (<i>/</i>) in the pattern-box and this will highlight where the beast is hiding. Give it a go!
       </p>
     </div>
     <div id="scene-1" class="scene" aria-hidden="true">
         <p>Finding your first cat wasn't too difficult, wasn't it?</p>
-        <p>Now let's see if you can find 3 <i>cat</i>s! to do that, you'll need to use the <i>global</i> flag (clicking the <i>g</i> letter next to the pattern)</p>
+        <p>Now let's see if you can find 3 <i>cat</i>s! to do that, you'll need to use the <i>global</i> flag (adding a <i>g</i> at the <i>options</i> after the second <i>/</i>)</p>
         <p>let's see if you can find those kitties</p>
     </div>
     <div id="scene-2" class="scene" aria-hidden="true">
         <p>Seems like you're becoming an expert find cats, let's see if you're that good with <i>dog</i>s as well</p>
-        <p>However dogs come in different sizes - smalls dogs and big DOGs so you'll need to use the <i>case Insensitive</i> flag (the <i>i</i> letter next to the pattern)</p>
+        <p>However dogs come in different sizes - smalls dogs and big DOGs so you'll need to use the <i>case Insensitive</i> flag (adding <i>i</i> at the <i>options</i>)</p>
         <p>let's see if you can find 3 dogs (don't forget to use the <i>g</i>lobal flag as well!)</p>
     </div>
     <div id="scene-3" class="scene" aria-hidden="true">
@@ -52,12 +54,14 @@
         <p>A good tracker can handle whatever is thrown at him, so your next challenge isn't about animals, rather finding me phone numbers of two foxy ladies I met last night. They appear here in this paper filled with number but they have a very strict format: they always start with a "<b>0</b>" followed by <b>1 or 2</b> digits, space and exactly <b>3</b> more digits, another space and then at least <b>6</b> digits</p>
         <p>You can limit the number of appearances using the `<i>{}</i>` pattern: <i>{x,y}</i> would mean between x and y, <i>{x,}</i> would mean at least x and <i>{x}</i> would mean exactly x</p>
     </div>            
+    <div id="scene-10" class="scene" aria-hidden="true">
+      Hope you enjoyed learning Regular-Expressions,<br/>
+      Please leave <a href="mailto:odedshr@gmail.com">me</a> your feedback 
+    </div>
     <div class="challenge">
       <div class="regular-expression">
-        <h3>Pattern</h3>/ <input type="text" id="pattern" class="pattern" placeholder="regular expression pattern here"/> /
-        <input type="checkbox" class="js-flag" id="flag-g" value="g"><label for="flag-g" title="Global">g</label>
-        <input type="checkbox" class="js-flag" id="flag-i" value="i"><label for="flag-i" title="case Insensitive">i</label>
-        <input type="checkbox" class="js-flag" id="flag-m" value="m"><label for="flag-m" title="Multi line">m</label>
+        <h3>Pattern</h3>
+        <input type="text" id="pattern" class="pattern" placeholder="/regexp-pattern/options"/>
       </div>
       <div class="data"><h3>Data</h3><span id="data"></span></div>
       <div class="matches"><h3>Matches</h3><span id="matches"></span></div>   
