@@ -1,75 +1,157 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RegExp Tutorial</title>
-    <script src="main.js"></script>
-    <link rel="stylesheet" type="text/css" href="style-01.css">
-  </head>
-  <body>
-    <div id="scene-0" class="scene">
-      <p>G'day mate!</p>
-      <p>The name is Reggie, Expert in tracking wild animals. At your service.</p>
-      <p>In this tutorial you're gonna be learning how to track down elusive animals using <i>RegExp</i> patterns (also known as <b>Regular-Expressions</b>).</p>
-      <p>And here your first challenge - somewhere in this text there's a cat hiding and you ought to find it</p>
-      <p>For an expert tracker this should take a second, and in real-life this is all you got before the beast will pounce at your throat
-        All you need to do is type `<i>cat</i>` between two slashes (<i>/</i>) in the pattern-box and this will highlight where the beast is hiding. Give it a go!
-      </p>
-    </div>
-    <div id="scene-1" class="scene" aria-hidden="true">
-        <p>Finding your first cat wasn't too difficult, wasn't it?</p>
-        <p>Now let's see if you can find 3 <i>cat</i>s! to do that, you'll need to use the <i>global</i> flag (adding a <i>g</i> at the <i>options</i> after the second <i>/</i>)</p>
-        <p>let's see if you can find those kitties</p>
-    </div>
-    <div id="scene-2" class="scene" aria-hidden="true">
-        <p>Seems like you're becoming an expert find cats, let's see if you're that good with <i>dog</i>s as well</p>
-        <p>However dogs come in different sizes - smalls dogs and big DOGs so you'll need to use the <i>case Insensitive</i> flag (adding <i>i</i> at the <i>options</i>)</p>
-        <p>let's see if you can find 3 dogs (don't forget to use the <i>g</i>lobal flag as well!)</p>
-    </div>
-    <div id="scene-3" class="scene" aria-hidden="true">
-        <p>Great job finding those dogs but now let's see if you can all <i>cat</i>s and the <i>dog</i>s at the same time</p>
-        <p>The trick is quite simply, honestly, you just need to use the pipe (<i>|</i>) so search for one thing <b>or</b> the other. Give it a go!</p>
-    </div>
-    <div id="scene-4" class="scene" aria-hidden="true">
-        <p>One more challenge before we face you with some really wild animals. A good tracker mustn't confuse a household cat from a bobcat because in the outback it's life and death</p>
-        <p>So go ahead and find all the <i>cat</i>s that are just cats. You'll need to use the <b>Boundary</b> symbol (<i>\b</i>) to know where the cat's tail ends!</p>
-    </div>
-    <div id="scene-5" class="scene" aria-hidden="true">
-        <p>Every tracker knows that to find a dingo one must become a dingo, and <i>dingos</i> lives in packs. So now you need to find all the dingos, whether they're in a pack or lonely.</p>
-        <p>Sure you can look for <i>dingo|dingos</i> but a better way is by adding <i>?</i> after the letter <i>s</i> and that would mean the letter <b>might</b> appear once. Try it!</p>
-    </div>
-    <div id="scene-6" class="scene" aria-hidden="true">
-        <p>Let's play some more with the <i>?</i> metacharacter. Let's see if you can find some roos...</p>
-        <p>Roos, if you haven't figured it out are <i>Kangaroo</i>s but here in the Outback, where death is lurking, we don't have time to say mundane things like "kanga"s</p>
-        <p>If <i>?</i> makes the preceeding character optional, you'll need to use the brackets (<i>()</i>) to make entire phrase optional. don't forget roos might come in mobs</p>
-    </div>
-    <div id="scene-7" class="scene" aria-hidden="true">
-        <p>Let's see if you can count. You're next task is to track and count <i>wombat</i>s.</p>
-        <p>To look for number you can either use the <i>\d</i> metacharacter or <i>[0-9]</i> pattern, I'm not being picky</p>
-    </div>
-    <div id="scene-8" class="scene" aria-hidden="true">
-        <p>You can count to 9. That's fantastic; now let's try counting a bit higher than that. We're now looking for <i>koala</i>s</p>
-        <p>Just like the <i>?</i> meant a character is optional, <i>+</i> would mean that the character (or pattern) appears at least once.</p>
-    </div>
-    <div id="scene-9" class="scene" aria-hidden="true">
-        <p>A good tracker can handle whatever is thrown at him, so your next challenge isn't about animals, rather finding me phone numbers of two foxy ladies I met last night. They appear here in this paper filled with number but they have a very strict format: they always start with a "<b>0</b>" followed by <b>1 or 2</b> digits, space and exactly <b>3</b> more digits, another space and then at least <b>6</b> digits</p>
-        <p>You can limit the number of appearances using the `<i>{}</i>` pattern: <i>{x,y}</i> would mean between x and y, <i>{x,}</i> would mean at least x and <i>{x}</i> would mean exactly x</p>
-    </div>            
-    <div id="scene-10" class="scene" aria-hidden="true">
-      Hope you enjoyed learning Regular-Expressions,<br/>
-      Please leave <a href="mailto:odedshr@gmail.com">me</a> your feedback 
-    </div>
-    <div class="challenge">
-      <div class="regular-expression">
-        <h3>Pattern</h3>
-        <input type="text" id="pattern" class="pattern" placeholder="/regexp-pattern/options"/>
-      </div>
-      <div class="data"><h3>Data</h3><span id="data"></span></div>
-      <div class="matches"><h3>Matches</h3><span id="matches"></span></div>   
-    </div>
-    <div id="success" aria-hidden="true" class="dialog">
-      <p>Well done mate!</p>
-      <p>Let's move on to something a bit more challenging</p>
-      <button id="next" class="button-next">Next</button>
-    </div>
-  </body>
+	<head>
+		<title>RegExp Tutorial</title>
+		<script src="main.js"></script>
+		<link rel="stylesheet" type="text/css" href="style-01.css" />
+	</head>
+	<body>
+		<div id="scene-0" class="scene">
+			<p>G'day mate!</p>
+			<p>The name is Reggie, Expert in tracking wild animals. At your service.</p>
+			<p>
+				In this tutorial you're gonna be learning how to track down elusive animals using <i>RegExp</i> patterns (also
+				known as <b>Regular-Expressions</b>).
+			</p>
+			<p>And here your first challenge - somewhere in this text there's a cat hiding and you ought to find it</p>
+			<p>
+				For an expert tracker this should take a second, and in real-life this is all you got before the beast will
+				pounce at your throat All you need to do is type `<i>cat</i>` between two slashes (<i>/</i>) in the pattern-box
+				and this will highlight where the beast is hiding. Give it a go!
+			</p>
+		</div>
+		<div id="scene-1" class="scene" aria-hidden="true">
+			<p>Finding your first cat wasn't too difficult, wasn't it?</p>
+			<p>
+				Now let's see if you can find 3 <i>cat</i>s! to do that, you'll need to use the <i>global</i> flag (adding a
+				<i>g</i> at the <i>options</i> after the second <i>/</i>)
+			</p>
+			<p>
+				let's see if you can find those kitties (hint: we're not looking for a clowder of cat<b>s</b> but three times
+				the word cat appear)
+			</p>
+		</div>
+		<div id="scene-2" class="scene" aria-hidden="true">
+			<p>Seems like you're becoming an expert find cats, let's see if you're that good with <i>dog</i>s as well</p>
+			<p>
+				However dogs come in different sizes - smalls dogs and big DOGs so you'll need to use the
+				<i>case Insensitive</i> flag (adding <i>i</i> at the <i>options</i>)
+			</p>
+			<p>let's see if you can find 3 dogs (don't forget to use the <i>g</i>lobal flag as well!)</p>
+		</div>
+		<div id="scene-3" class="scene" aria-hidden="true">
+			<p>
+				Great job finding those dogs but now let's see if you can all <i>cat</i>s and the <i>dog</i>s at the same time
+			</p>
+			<p>
+				The trick is quite simply, honestly, you just need to use the pipe (<i>|</i>) so search for one thing
+				<b>or</b> the other. Give it a go!
+			</p>
+		</div>
+		<div id="scene-4" class="scene" aria-hidden="true">
+			<p>
+				One more challenge before we face you with some really wild animals. A good tracker mustn't confuse a household
+				cat from a bobcat because in the outback it's life and death
+			</p>
+			<p>
+				So go ahead and find all the <i>cat</i>s that are just cats. You'll need to use the <b>Boundary</b> symbol
+				(<i>\b</i>) to know where the cat's tail ends!
+			</p>
+		</div>
+		<div id="scene-5" class="scene" aria-hidden="true">
+			<p>
+				Every tracker knows that to find a dingo one must become a dingo, and <i>dingos</i> lives in packs. So now you
+				need to find all the dingos, whether they're in a pack or lonely.
+			</p>
+			<p>
+				Sure you can look for <i>dingo|dingos</i> but a better way is by adding <i>?</i> after the letter <i>s</i> and
+				that would mean the letter <b>might</b> appear once. Try it!
+			</p>
+		</div>
+		<div id="scene-6" class="scene" aria-hidden="true">
+			<p>Let's play some more with the <i>?</i> metacharacter. Let's see if you can find some roos...</p>
+			<p>
+				Roos, if you haven't figured it out are <i>Kangaroo</i>s but here in the Outback, where death is lurking, we
+				don't have time to say mundane things like "kanga"s
+			</p>
+			<p>
+				If <i>?</i> makes the preceeding character optional, you'll need to use the brackets (<i>()</i>) to make entire
+				phrase optional. don't forget roos might come in mobs
+			</p>
+		</div>
+		<div id="scene-7" class="scene" aria-hidden="true">
+			<p>Let's see if you can count. You're next task is to track and count <i>wombat</i>s.</p>
+			<p>
+				To look for number you can either use the <i>\d</i> metacharacter or <i>[0-9]</i> pattern, I'm not being picky
+			</p>
+		</div>
+		<div id="scene-8" class="scene" aria-hidden="true">
+			<p>
+				So <i>\d</i> matches any digit (even in foreign languages!) but the grouped range pattern (<i>[0-9]</i>) is also
+				useful
+			</p>
+			<p>Try finding packs of 4-7 coyotes, but not more and not less</p>
+		</div>
+		<div id="scene-9" class="scene" aria-hidden="true">
+			<p>
+				You can count to 9. That's fantastic; now let's try counting a bit higher than that. We're now looking for
+				<i>koala</i>s
+			</p>
+			<p>
+				Just like the <i>?</i> meant a character is optional, <i>+</i> would mean that the character (or pattern)
+				appears at least once.
+			</p>
+		</div>
+		<div id="scene-10" class="scene" aria-hidden="true">
+			<p>
+				A good tracker can handle whatever is thrown at him, so your next challenge isn't about animals, rather finding
+				me phone numbers of two foxy ladies I met last night. They appear here in this paper filled with number but they
+				have a very strict format: they always start with a "<b>0</b>" followed by <b>1 or 2</b> digits, space and
+				exactly <b>3</b> more digits, another space and then at least <b>6</b> digits
+			</p>
+			<p>
+				You can limit the number of appearances using the `<i>{}</i>` pattern: <i>{x,y}</i> would mean between x and y,
+				<i>{x,}</i> would mean at least x and <i>{x}</i> would mean exactly x
+			</p>
+		</div>
+		<div id="scene-11" class="scene" aria-hidden="true">
+			<p>
+				Your next task is to find all the <i>tigers</i> including their counts, but this is tricky because there's the
+				tiger's description we need to ignore. Essentially the description is anything but a number, so you can use the
+				<i>\D</i> to catch anything that is not a digit (and you already know to use the <i>+</i> to catch at least one
+				character
+			</p>
+			<p>
+				But it's even tricker because you need to make sure tigers' description is as short as possible (try out to see
+				what happens). To make RegExp do a <b>lazy</b> (and not <b>greedy</b>) you'll need to use <i>+?</i>
+			</p>
+			<p>
+				For example, if we have "axb ayb" then the pattern <i>/aֿ\D+b/</i> will match "axb ayb" while
+				<i>/a\D+?c/</i> will match "axb"
+			</p>
+		</div>
+		<div id="scene-end" class="scene" aria-hidden="true">
+			Hope you enjoyed learning Regular-Expressions,<br />
+			Please leave <a href="mailto:odedshr@gmail.com">me</a> your feedback
+		</div>
+		<div class="challenge">
+			<div class="regular-expression">
+				<h3>Pattern</h3>
+				<input type="text" id="pattern" class="pattern" placeholder="/regexp-pattern/options" />
+			</div>
+			<div class="data">
+				<h3>Data</h3>
+				<span id="data"></span>
+			</div>
+			<div class="matches">
+				<h3>Matches</h3>
+				<span id="matches"></span>
+			</div>
+		</div>
+		<div id="success" aria-hidden="true" class="dialog">
+			<p>Well done mate!</p>
+			<p>Let's move on to something a bit more challenging</p>
+			<button id="next" class="button-next">Next</button>
+		</div>
+	</body>
 </html>

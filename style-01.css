@@ -9,160 +9,160 @@ FAF67B - light yellow
 E2DD4B - dark yellow
 */
 body {
-  background-color: #FDAD32;
+	background-color: #fdad32;
 }
 
-[aria-hidden="true"] {
-  display: none;
+[aria-hidden='true'] {
+	display: none;
 }
 
 .scene {
-  background-color: #FAF67B;
-  border-radius: 1em;
-  color: #0B4733;
-  font-family: 'Hi Melody', cursive;
-  font-size: 1.5em;
-  margin: 1em;
-  padding: 0.5em 1em;  
+	background-color: #faf67b;
+	border-radius: 1em;
+	color: #0b4733;
+	font-family: 'Hi Melody', cursive;
+	font-size: 1.5em;
+	margin: 1em;
+	padding: 0.5em 1em;
 }
 
 .scene p {
-  margin-block-start: 0.5em;
-  margin-block-end: 0.5em;
+	margin-block-start: 0.5em;
+	margin-block-end: 0.5em;
 }
 
 .scene i {
-  background-color: #E2DD4B;
-  border:1px solid #FDAD32;
-  border-radius: 0.2em;
-  display: inline-block;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 0.7em;
+	background-color: #e2dd4b;
+	border: 1px solid #fdad32;
+	border-radius: 0.2em;
+	display: inline-block;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 0.7em;
 }
 
 .challenge {
-  background-color: #FAF67B;
-  border-radius: 1em;
-  margin: 1em;
-  padding: 0.5em;  
-  position: relative;
+	background-color: #faf67b;
+	border-radius: 1em;
+	margin: 1em;
+	padding: 0.5em;
+	position: relative;
 }
 
 h3 {
-  color: #E2DD4B;
-  font-size: 0.8em;
-  margin: 0 0 0.5em 0;
-  padding: 0;
-  letter-spacing: 0.5em;
-  font-weight: normal;
+	color: #e2dd4b;
+	font-size: 0.8em;
+	margin: 0 0 0.5em 0;
+	padding: 0;
+	letter-spacing: 0.5em;
+	font-weight: normal;
 }
 
 .regular-expression {
-  background-color: #0B4733;
-  border-top-left-radius: 1em;
-  border-top-right-radius: 1em;
-  box-sizing: border-box;
-  color: #6A9057;
-  display: block;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 1em;
-  margin-bottom: 0.5em;
-  padding: 0.5em 1em;
-  width: 100%;
+	background-color: #0b4733;
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+	box-sizing: border-box;
+	color: #6a9057;
+	display: block;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 1em;
+	margin-bottom: 0.5em;
+	padding: 0.5em 1em;
+	width: 100%;
 }
 
 .pattern {
-  background: transparent;
-  border: 1px dashed #6A9057;
-  color: #E2DD4B;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 1em;
-  max-width: 100%;
-  outline-color: #FDAD32;
-  transition: width 0.5s ease-out;
-  width: 20em;
+	background: transparent;
+	border: 1px dashed #6a9057;
+	color: #e2dd4b;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 1em;
+	max-width: 100%;
+	outline-color: #fdad32;
+	transition: width 0.5s ease-out;
+	width: 20em;
 }
 
 .pattern::placeholder {
-  color: #6A9057;
+	color: #6a9057;
 }
 
 .js-flag {
-  display: none;
+	display: none;
 }
 
 .js-flag + label {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .js-flag:checked + label {
-  color: #FAF67B;
+	color: #faf67b;
 }
 
 .data {
-  background-color: #0B4733;
-  box-sizing: border-box;
-  color: #6A9057;
-  display: block;
-  font-family: 'Courier New', Courier, monospace;
-  letter-spacing: 1em;
-  margin-bottom: 0.5em;
-  padding: 0.5em 1em;
-  width: 100%;
+	background-color: #0b4733;
+	box-sizing: border-box;
+	color: #6a9057;
+	display: block;
+	font-family: 'Courier New', Courier, monospace;
+	letter-spacing: 1em;
+	margin-bottom: 0.5em;
+	padding: 0.5em 1em;
+	width: 100%;
 }
 
 .data b {
-  color: #E2DD4B;
+	color: #e2dd4b;
 }
 
 .matches {
-  background-color: #0B4733;
-  border-bottom-left-radius: 1em;
-  border-bottom-right-radius: 1em;
-  box-sizing: border-box;
-  color: #6A9057;
-  display: block;
-  font-family: 'Courier New', Courier, monospace;
-  height: 4em;
-  letter-spacing: 0.5em;
-  padding: 0.5em 1em;
-  width: 100%;
+	background-color: #0b4733;
+	border-bottom-left-radius: 1em;
+	border-bottom-right-radius: 1em;
+	box-sizing: border-box;
+	color: #6a9057;
+	display: block;
+	font-family: 'Courier New', Courier, monospace;
+	min-height: 4em;
+	letter-spacing: 0.5em;
+	padding: 0.5em 1em;
+	width: 100%;
 }
 
 .dialog {
-  background-color: #FAF67B;
-  border-radius: 1em;
-  color: #0B4733;
-  font-family: 'Hi Melody', cursive;
-  font-size: 1.5em;
-  margin: 1em;
-  padding: 0.5em 1em;  
+	background-color: #faf67b;
+	border-radius: 1em;
+	color: #0b4733;
+	font-family: 'Hi Melody', cursive;
+	font-size: 1.5em;
+	margin: 1em;
+	padding: 0.5em 1em;
 }
 
 .button-next {
-  background-color: #0B4733;
-  border: 4px solid #FDAD32;
-  border-radius: 0.5em;
-  color: #FDAD32;
-  cursor: pointer;
-  display: block;
-  font-size: 0.76em;
-  font-weight: bold;
-  margin: 0 auto;
-  width: 10em;
+	background-color: #0b4733;
+	border: 4px solid #fdad32;
+	border-radius: 0.5em;
+	color: #fdad32;
+	cursor: pointer;
+	display: block;
+	font-size: 0.76em;
+	font-weight: bold;
+	margin: 0 auto;
+	width: 10em;
 }
 
 .button-next:hover {
-  color: #E2DD4B;
+	color: #e2dd4b;
 }
 
 .button-next:focus {
-  background-color: #6A9057;
-  outline: none;
+	background-color: #6a9057;
+	outline: none;
 }
 
 .button-next:active {
-  background-color: #6A9057;
-  border-color: #0B4733;
-  color: #E2DD4B;
+	background-color: #6a9057;
+	border-color: #0b4733;
+	color: #e2dd4b;
 }
